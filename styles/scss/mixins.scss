@@ -1,0 +1,29 @@
+@mixin flexbox ($direction, $justifyContent, $alignItems) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    
+}
+
+@mixin usefulProperties($padding, $margin, $fontSize, $fontWeight) {
+    
+    padding: $padding;
+    margin: $margin;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    
+}
+@mixin widthHeight ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin colors ($bgColor, $color){
+    background-color:$bgColor ;
+    color:$color ;
+}
+@mixin font($fontSize,$fontWeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}

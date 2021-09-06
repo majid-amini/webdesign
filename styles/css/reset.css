@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', 'sans-serif', 'Rosario';
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+/*# sourceMappingURL=reset.css.map */

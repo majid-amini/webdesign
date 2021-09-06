@@ -1,0 +1,355 @@
+
+@import "reset.scss";
+@import "variables.scss";
+@import "mixins.scss";
+
+
+
+
+// first part (header and navbar)
+.header {
+    font-family: rosario; 
+    height: 100%; 
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: .2rem;
+    padding: .3rem;
+}
+.container {
+ @include usefulProperties(0.5rem 2rem, 0, 2rem,normal);
+ @include colors($lightBlueColor, $whiteColor);
+ @include flexbox(row, space-around, center );
+ 
+}
+.header_seconditem {
+ @include flexbox(column, center, center);
+ @include widthHeight(100%, 50rem);
+ background: url(../../images/hero.jpg)no-repeat center ;
+ background-size: cover;
+ 
+}
+.seconditem_div {
+    @include flexbox(column, flex-start, flex-start);
+    width: 100%;
+    margin-left: 6rem;
+    
+}
+.seconditem_title {
+    @include usefulProperties(0.3rem, 0.6rem ,3rem ,normal);
+    color: $whiteColor;
+}
+.seconditem_btn {
+    @include usefulProperties(1rem, .6rem 8rem,2rem ,normal);
+    width: 12rem;
+    border: none;
+    border-radius: 0 10px 0 10px;
+    transition: 0.4s;
+}
+.seconditem_btn:hover {
+    box-shadow: 2px 2px 1px $lightBlueColor;
+    color: rgba(0, 0, 0, .5);
+    cursor: pointer;
+}
+
+// end of header part
+
+//second part (imageGallery)
+.maincontainer {
+    @include flexbox(column, center, center);
+    background-color: $whiteColor;
+    padding: 0.6rem 0;
+    margin: 0.6rem 0;
+
+            .maincontainer_h3 {
+                @include font(3.5rem, 300);
+                font-family: Rosario;
+                color: $darkGrayColor;
+                margin-top: .5rem; 
+            }
+            .image-gallery {
+                @include flexbox(row, center, center);
+                flex-wrap: wrap;
+                width: 100%;
+                background-color: $whiteColor;
+                list-style: none;
+
+                            li {
+                
+                                margin-top: 1.2rem;
+                                padding: 1.3rem;
+
+                                              div {
+                                                box-shadow: 1px 1px 2px rgba(0, 0, 0, .6);
+                                                @include flexbox(column,flex-end ,flex-start);
+                                                transition: 0.4s;
+                                            }
+                            }
+            }
+
+}
+
+
+.image-gallery li div span {
+    @include font(1.9rem,500);   
+    color: $whiteColor;
+    padding: 0.8rem 0;
+    margin: 0.8rem;
+}
+.image-gallery li div:hover {
+    box-shadow: 2px 2px 5px rgba(30, 161, 144, 0.719);
+    cursor: pointer;
+}
+.image-gallery li .image {
+    @include widthHeight(30rem, 30rem);
+    border-radius: .7rem;
+}
+.image-gallery li .image1{
+    background: url(../../images/4.jpg) no-repeat center ;
+}
+.image-gallery li .image2{
+    background: url(../../images/2.jpg) no-repeat center ;
+}
+.image-gallery li .image3{
+    background: url(../../images/5.jpg) no-repeat center ;
+}
+
+//end of second part (imageGallery)
+
+
+//third part with a big image
+
+.bigimage {
+    @include flexbox(column, flex-end, flex-start);
+    @include widthHeight(100%, 30rem);
+    background: url(../../images/6.jpg) no-repeat center; 
+    background-size: 85%;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    
+                 h3 {
+                    @include font(3rem, 700);
+                    font-family: Rosario;
+                    color: $whiteColor;
+                    margin-top: .5rem;
+                    margin-left: 1.3rem; 
+                    padding-left: 3rem;
+                }
+                 p {
+                     @include font(1.5rem, 300);
+                    font-family: Rosario;
+                    color: $whiteColor;
+                    margin-top: .5rem;
+                    margin-left: 1.3rem; 
+                    padding-left: 3rem;
+                }
+                 > div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 6rem;
+
+                                button {
+                                    @include colors($whiteColor, $blackColor);
+                                    padding: 1.5rem;
+                                    margin: 3.5rem;
+                                    border-radius: 12rem;
+                                    text-align: center;
+                                    border: none;
+                                    transition: 1s;
+                                }
+                                 button:hover {
+                                     @include colors(rgba(0, 0, 0,0.5),$whiteColor );
+                                    box-shadow: 2px 2px 1px $lightBlueColor;
+                                    cursor: pointer;
+                                }
+                }
+    
+}
+
+
+//end of third part (bigImage)
+
+
+//pictures with like buttons
+.moretoexplore {
+    display: flex;
+    flex-direction: column;
+
+                   
+                     .moretoexplore_ul {
+                      list-style: none;
+                      @include flexbox(row, center,center);
+                      flex-wrap: wrap;
+
+                                 li {
+                                    position: relative;
+                                    margin: 0 2rem;
+                                    @include flexbox(column, center,center);
+                                    width: 30rem;
+                                }
+                                 .circle {
+                                    @include widthHeight(2.5rem, 2.5rem);
+                                    @include flexbox(row,center ,center);
+                                     background-color: $whiteColor;
+                                     position: absolute;
+                                     right: 1rem;
+                                     top: 1.5rem;
+                                     border-radius: 50%;
+                                     cursor: pointer;
+                                 }
+                     }
+    
+}
+
+.moretoexplore h3 {
+    @include font(2rem, bold);
+    font-family: Rosario;
+    color: $blackColor;
+    margin-left: 3.5rem;
+    padding: 1.5rem;
+}
+.moretoexplore_ul li i{
+    font-size: 1.5rem;
+    
+    
+ }
+.moretoexplore_ul li img {
+    @include widthHeight(30rem, 30rem);
+    border-radius: 5px;
+    transition: 0.4s;
+}
+.moretoexplore_ul li img:hover {
+   cursor: pointer;
+   box-shadow: 2px 2px 1px $lightBlueColor;
+}
+
+
+.moretoexplore_ul li .title {
+    text-align: center;
+
+             p{
+                @include font(1.2rem, bold);
+                padding: 0.5rem;
+            }
+}
+
+
+//end of pictures with like buttons
+hr {
+    width: 95%;
+    margin: auto;
+}
+footer {
+    margin-top: 1rem;
+}
+footer .top {
+    display: flex;
+    justify-content: center;
+
+}
+
+footer .top .left .left-ul{
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+
+                 li {
+                    @include font(1.2rem, bold);
+                    padding: 1rem;
+
+                                select {
+                                    border: none;
+                                    @include font(1.2rem, bold);
+                                }
+                }
+    
+}
+
+
+footer .top .right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+
+        .right-ul {
+                @include flexbox(row, flex-end, center);
+                display: flex;
+                list-style: none;
+                         li {
+                            padding: 1rem;
+                        }
+            }    
+}
+
+ 
+ .right-ul li img {
+     @include widthHeight(2rem, 2rem);
+}
+footer .bottom {
+  width: 100%;
+}
+footer .bottom  span {
+    @include font(1rem, 300);
+    padding: 1rem;
+    margin: 1rem 3rem;
+    
+}
+.redbg {
+    font-weight: bold;
+    color: $redColor;
+   
+}
+
+@media screen and (max-width: 768px) {
+    
+    .image-gallery{
+        display: block;
+        
+    }
+    footer .top{
+        display: block;
+    }
+    footer .bottom span{
+        padding: 1rem;
+        margin: 0;
+    }
+    
+}
+@media screen and (max-width: 600px) {
+    
+    .seconditem_div {
+        margin: 0;
+    }
+    .seconditem_title {
+        font-size: 2rem;
+    }
+    .seconditem_btn {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    .bigimage {
+        justify-content: flex-end;
+        
+    }
+    .bigimage > div {
+        margin-left: 3.5rem;
+    }
+    .bigimage h3{
+        @include font(2rem, bold);
+        padding-left: 0;
+        margin-left: 0;
+        
+    }
+    .bigimage p {
+        @include font(1.5rem, normal);
+        padding-left: 0;
+        margin-left: 0;
+    }
+    .bigimage div  button {
+       padding: 1rem;
+        margin-left: 0;
+        font-size: 1.2rem;
+        border-radius: 3rem;
+    }
+}
